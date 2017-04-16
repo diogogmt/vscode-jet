@@ -1,0 +1,26 @@
+{
+    "name": "jet",
+    "displayName": "Jet Template Engine",
+    "description": "Jet template engine language syntax highlighting support",
+    "version": "0.0.1",
+    "publisher": "diogogmt",
+    "engines": {
+        "vscode": "^1.10.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "jet",
+            "aliases": ["Jet", "jet"],
+            "extensions": [".jet"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "jet",
+            "scopeName": "source.jet",
+            "path": "./syntaxes/jet.tmLanguage.json"
+        }]
+    }
+}

@@ -1,0 +1,56 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Jet",
+		"patterns": [		
+        {
+			"comment": "Language constants",
+			"match": "\\b(true|false|nil|iota)\\b",
+			"name": "constant.language.jet"
+		},
+        {
+            "comment": "Keywords",
+            "name": "support.constant.jet",            
+            "match": "(?<=\\{\\{)\\s*(if|else if|else|end|block|yield|range|extends|include|import)"
+        },
+		{
+			"comment": "Public functions/fields",
+			"match": "(?<=[\\. {])[A-Z]\\w*(?=.*}})",
+			"name": "support.function.builtin.jet"
+		},
+        {
+			"comment": "Built-in functions invoked",
+			"match": "\\b(isset|len|lower|upper|hasPrefix|hasSuffix|repeat|replace|splt|trimSpace|html|url|safeHtml|safeJs|raw|writeJson|map)\\b(?=\\()",
+			"name": "support.function.builtin.jet"
+		},
+        {
+			"comment": "Built-in functions pipped",
+			"match": "(?<=\\|)\\s*(lower|upper|hasPrefix|hasSuffix|repeat|replace|splt|trimSpace|html|url|safeHtml|safeJs|raw|writeJson)",
+			"name": "support.function.builtin.jet"
+		},
+		{
+			"include": "#html_tags"
+		},
+        {
+			"include": "text.html.basic"
+		},
+		{
+			"name": "string.quoted.double.jet",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.jet",
+					"match": "\\\\."
+				}
+			]
+		}
+	],
+	"repository": {
+		"html_tags": {
+			"patterns": [
+				
+			]
+		}
+	},
+	"scopeName": "source.jet"
+}
